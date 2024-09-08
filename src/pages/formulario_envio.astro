@@ -3,16 +3,107 @@ import Container from "../components/shared/Container.astro";
 import Layout from "../layouts/Layout.astro";
 
 // aqui entre estas barritas se pone el código de Javascript que quieras
-
 ---
 
+<style>
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f3f4f6; /* Color de fondo suave */
+    }
 
+    .form-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-header {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-input:focus {
+        border-color: #007bff;
+    }
+
+    .form-button {
+        background-color: #007bff;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-button:hover {
+        background-color: #0056b3;
+    }
+    .form-back-button {
+        background-color: transparent;
+        color: #007bff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .form-back-button:hover {
+        color: #0056b3;
+    }
+</style>
 
 <Layout>
-    
     <Container>
-        
-        <!-- hay que hacer el formulario de envio de correos justo aqui 👇 -->
+        <div class="form-container">
+            <div class="form-card">
+                <div class="form-header">Schedule Your Appointment Today!</div>
+                <form
+                    action="https://formsubmit.co/apg02061174246@gmail.com"
+                    method="POST"
+                >
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                        class="form-input"
+                    />
+                    <input
+                        type="hidden"
+                        name="_next"
+                        value=" http://localhost:4321/thank_you"
+                    />
+                    
 
-    <Container/>
+                    <button type="submit" class="form-button">Send</button>
+                </form>
+                <button onclick="history.back()" class="form-back-button"
+                    >Back</button
+                >
+            </div>
+        </div>
+    </Container>
 </Layout>
