@@ -6,15 +6,19 @@ import AboutUs from '../components/sections/AboutUs.astro';
 import Features from '../components/sections/Features.astro';
 import CTA from '../components/sections/CTA.astro';
 import Brands from '../components/sections/Brands.astro';
+import Footer from "../components/elements/Footer.astro";
+import Navbar from "../components/elements/Navbar.astro";
 ---
 
-<Layout title="Welcome to AgenceX">
+<Layout >
 	<main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+		<Navbar/>
 		<Hero/>
-		<Brands/>
+		<!-- <Brands/> -->
 		<Services/>
 		<AboutUs/>
 		<Features/>
 		<CTA/>
+		<Footer/>
 	</main>
 </Layout>
