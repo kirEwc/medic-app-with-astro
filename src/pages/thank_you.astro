@@ -1,0 +1,68 @@
+---
+import Container from "../components/shared/Container.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+  .thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6; /* Color de fondo suave */
+  }
+
+  .thank-you-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .thank-you-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  .thank-you-message {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+
+  .thank-you-button {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .thank-you-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<Layout>
+  <Container>
+    <div class="thank-you-container">
+      <div class="thank-you-card">
+        <div class="thank-you-header">Thank You!</div>
+        <div class="thank-you-message">
+          Thank you for your message. We will get in touch with you as soon as
+          possible!
+        </div>
+        <button onclick="window.location.href='/'" class="thank-you-button"
+          >Go to Homepage</button
+        >
+      </div>
+    </div>
+  </Container>
+</Layout>
