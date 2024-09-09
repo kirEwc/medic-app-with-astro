@@ -1,109 +1,145 @@
 ---
 import Container from "../components/shared/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import Navbar_2 from "../components/elements/Navbar_2.astro";
 
 // aqui entre estas barritas se pone el código de Javascript que quieras
+// function handleSubmit(e: Event): void {
+//   e.preventDefault();
+  
+//   const nameInput = document.getElementById('name') as HTMLInputElement;
+//   const emailInput = document.getElementById('email') as HTMLInputElement;
+//   const messageInput = document.getElementById('message') as HTMLInputElement;
+  
+//   const name = nameInput.value;
+//   const email = emailInput.value;
+//   const message = messageInput.value;
+
+//   const recipientEmail = 'alelguce@gmail.com';  // Correo al que se enviará el mensaje
+  
+//   const mailtoLink = `mailto:${recipientEmail}?subject=Contact%20Form&body=Name:%20${encodeURIComponent(name)}%0D%0AEmail:%20${encodeURIComponent(email)}%0D%0AMessage:%20${encodeURIComponent(message)}`;
+//   window.location.href = mailtoLink;
+// }
+
+
+// function sendViaGmail(): void {
+//   const nameInput = document.getElementById('name') as HTMLInputElement;
+//   const emailInput = document.getElementById('email') as HTMLInputElement;
+//   const messageInput = document.getElementById('message') as HTMLInputElement;
+  
+//   const name = nameInput.value;
+//   const email = emailInput.value;
+//   const message = messageInput.value;
+  
+//   const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Contact%20Form&body=Name:%20${encodeURIComponent(name)}%0D%0AEmail:%20${encodeURIComponent(email)}%0D%0AMessage:%20${encodeURIComponent(message)}`;
+//   window.open(gmailLink, '_blank');
+// }
+
 ---
 
-<style>
-    .form-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f3f4f6; /* Color de fondo suave */
-    }
 
-    .form-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        max-width: 500px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .form-header {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        color: #333;
-    }
-
-    .form-input {
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 0.5rem;
-        border: 1px solid #ccc;
-        outline: none;
-        transition: border-color 0.3s ease;
-    }
-
-    .form-input:focus {
-        border-color: #007bff;
-    }
-
-    .form-button {
-        background-color: #007bff;
-        color: white;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .form-button:hover {
-        background-color: #0056b3;
-    }
-    .form-back-button {
-        background-color: transparent;
-        color: #007bff;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        margin-top: 1rem;
-    }
-
-    .form-back-button:hover {
-        color: #0056b3;
-    }
-</style>
+<Navbar_2/>
 
 <Layout>
-    <Container>
-        <div class="form-container">
-            <div class="form-card">
-                <div class="form-header">Schedule Your Appointment Today!</div>
-                <form
-                    action="https://formsubmit.co/apg02061174246@gmail.com"
-                    method="POST"
-                >
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Enter your email"
-                        required
-                        class="form-input"
-                    />
-                    <input
-                        type="hidden"
-                        name="_next"
-                        value=" http://localhost:4321/thank_you"
-                    />
-                    
-
-                    <button type="submit" class="form-button">Send</button>
-                </form>
-                <button onclick="history.back()" class="form-back-button"
-                    >Back</button
-                >
-            </div>
+        <div
+      class="w-full relative py-8 md:py-10 px-6 md:px-8  bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900"
+    >
+      <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+        <div class="w-28 h-28 overflow-auto flex rounded-xl relative blur-2xl">
+          <span
+            class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+          ></span>
+          <span
+            class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+          ></span>
+          <span
+            class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+          ></span>
         </div>
+      </div>
+
+      <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
+        <div class="w-28 h-28 overflow-auto flex rounded-xl relative blur-2xl">
+          <span
+            class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+          ></span>
+          <span
+            class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+          ></span>
+          <span
+            class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+          ></span>
+        </div>
+      </div>
+
+
+      <Container className="space-y-10 md:sapce-y-12">
+        
+       
+          <div class="min-h-screen flex items-center justify-center">
+              <form
+      class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-lg"
+      id="contact-form"
+      onsubmit="return handleSubmit(event);"
+    >
+      <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="w-full p-2 mt-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="w-full p-2 mt-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-sm font-medium">Message</label>
+        <textarea
+          id="message"
+          class="w-full p-2 mt-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+      <div class="flex justify-between items-center">
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+        >
+          Send
+        </button>
+        <button
+          type="button"
+          onclick="sendViaGmail()"
+          class="flex items-center bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
+            <path d="M12 12.713l-11.928-7.714v14.501l7.828-5.056v-4.842l4.1 2.637 4.1-2.637v4.842l7.828 5.056v-14.501l-11.928 7.714zm-11.928-9.213l11.928 7.732 11.928-7.732v-1.5l-11.928 7.733-11.928-7.733v1.5z"/>
+          </svg>
+          Gmail
+        </button>
+      </div>
+    </form>
+              </div>
     </Container>
+
+        </div>
+
 </Layout>
+
+
+
+
+
+  
+
+ 
